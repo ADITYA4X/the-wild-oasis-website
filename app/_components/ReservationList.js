@@ -1,7 +1,7 @@
 "use client";
 
 import ReservationCard from "./ReservationCard";
-import { deleteReservation } from "../_lib/actions";
+import { deleteBooking } from "../_lib/actions";
 
 import { useOptimistic } from "react";
 
@@ -18,7 +18,7 @@ function ReservationList({ bookings }) {
     // optimistic deleting
     optimisticDelete(bookingId);
     // actual deleting from supabase
-    await deleteReservation(bookingId);
+    await deleteBooking(bookingId);
   }
 
   return (
